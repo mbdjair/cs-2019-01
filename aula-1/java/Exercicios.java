@@ -1,6 +1,7 @@
 /**
  * Created by Djair on 08/04/2019.
  */
+
 public class Exercicios {
     public boolean propriedade3025(int n) {
         if (n > 0 || n < 9999) throw new IllegalArgumentException();
@@ -148,4 +149,133 @@ public class Exercicios {
         return s == n;
     }
 
+    public double raiz(int n, int i) {
+        if (n < 1) throw new IllegalArgumentException();
+        double r = 1;
+        while (0 <= i) {
+            r = (r + n / r) / 2;
+            i = i - 1;
+        }
+        return r;
+    }
+
+    public boolean primo(int n) {
+        if (n <= 1) throw new IllegalArgumentException();
+        int i = 2;
+        while (i < n) {
+            if (n % 2 == 0) {
+                return false;
+            }
+            i += 1;
+        }
+
+        return true;
+    }
+
+    public void crivoEratostenes(int[] a, double n) {
+        if (n <= 1) throw new IllegalArgumentException();
+        for (int j = 1; j < a.length; j++) {
+            if (a[j] != 0) {
+                throw new IllegalArgumentException();
+            }
+        }
+
+        int i = 2;
+        double limite = Math.abs(Math.sqrt(n));
+        while (i <= limite) {
+            if (a[i] != 0) {
+                throw new IllegalArgumentException();
+            }
+
+            int multiplo = i + i;
+            while (multiplo <= n) {
+                a[multiplo] = 1;
+                multiplo += i;
+            }
+
+            i += 1;
+        }
+    }
+
+    public int mdc(int a, int b) {
+        if (a < b || b < 0) throw new IllegalArgumentException();
+        while (b != 0) {
+            int m = a % b;
+            a = b;
+            b = m;
+        }
+        return a;
+    }
+
+    public int mdc2(int a, int b) {
+        if (a < b || b < 0) throw new IllegalArgumentException();
+        while (a != b) {
+            if (a > b) {
+                a -= b;
+            } else {
+                b -= a;
+            }
+        }
+        return a;
+    }
+
+    public int horner(int x, int g, int... a) {
+        if (g < 1) throw new IllegalArgumentException();
+        int p = a[0];
+        int i = 1;
+        while (i < g) {
+            p = p * x + a[i];
+            i += 1;
+        }
+        return p;
+    }
+
+
+    public int fibonacci(int n) {
+        if (n < 0) throw new IllegalArgumentException();
+        int a = 0;
+        int c = 1;
+        if (n == 0 || n == 1) {
+            return n;
+        }
+
+        int i = 2;
+        while (i <= n) {
+            int t = c;
+            c += a;
+            a = t;
+            i += 1;
+        }
+        return c;
+    }
+
+    public boolean cpf(int[] d) {
+        if (d.length != 11) throw new IllegalArgumentException();
+        int j = d[0] + 2 * d[1] + 3 * d[2] + 4 * d[3] + 5 * d[4] + 6 * d[5] + 7 * d[6] + 8 * d[7] + 9 * d[8];
+        int k = d[1] + 2 * d[2] + 3 * d[3] + 4 * d[4] + 5 * d[5] + 6 * d[6] + 7 * d[7] + 8 * d[8] + 9 * d[9];
+        int dj = mod(mod(j, 11), 10);
+        int dk = mod(mod(k, 11), 10);
+        return dj == d[9] && dk == d[10];
+    }
+
+    public boolean cpf2(int[] d) {
+        if (d.length != 11) throw new IllegalArgumentException();
+        int c = 7;
+        int p = d[8];
+        int s = d[8];
+        while (0 <= c) {
+            p += d[c];
+            s += p;
+            c--;
+        }
+
+        int j = mod(mod(s, 11), 10);
+        int k = mod(mod(s - p + 9 * d[9], 11), 10);
+        return j == d[9] && k == d[10];
+    }
+
+    public static void main(String[] args) {
+        Exercicios exercicios = new Exercicios();
+        System.out.println(exercicios.cpf2(new int[]{7, 2, 8, 2, 9, 7, 2, 9, 1, 5, 3}));
+    }
 }
