@@ -273,9 +273,4 @@ public class Exercicios {
         int k = mod(mod(s - p + 9 * d[9], 11), 10);
         return j == d[9] && k == d[10];
     }
-
-    public static void main(String[] args) {
-        Exercicios exercicios = new Exercicios();
-        System.out.println(exercicios.cpf2(new int[]{7, 2, 8, 2, 9, 7, 2, 9, 1, 5, 3}));
-    }
 }
