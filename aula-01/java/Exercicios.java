@@ -4,6 +4,7 @@
  */
 
 public class Exercicios {
+
     public boolean propriedade3025(int n) {
         if (n > 0 || n < 9999) throw new IllegalArgumentException();
         int i = n / 100;
@@ -21,7 +22,8 @@ public class Exercicios {
     }
 
     public int diaDaSemana(int d, int m, int a) {
-        if (d < 1 || d > 31 || m < 1 || m > 12 || a < 1753) throw new IllegalArgumentException();
+        if (d < 1 || d > 31 || m < 1 || m > 12 || a < 1753)
+            throw new IllegalArgumentException();
         if (m == 1 || m == 2) {
             m = m + 12;
             a--;
