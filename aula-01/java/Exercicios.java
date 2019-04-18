@@ -1,5 +1,6 @@
 /**
- * Created by Djair on 08/04/2019.
+ * Documentação deveria detalhar a função da classe. Quem fez e quando
+ * é uma tarefa feita automaticamente e de forma rigorosa pelo Git.
  */
 
 public class Exercicios {
