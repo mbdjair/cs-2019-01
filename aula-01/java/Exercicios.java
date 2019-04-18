@@ -81,6 +81,7 @@ public class Exercicios {
             totalParcelas = b;
             parcela = a;
         }
+
         int i = 1;
         int s = 0;
         while (i <= totalParcelas) {
@@ -98,27 +99,30 @@ public class Exercicios {
             potencia = potencia(potencia, x);
             i++;
         }
+
         return potencia;
     }
 
     public double pi(int n) {
         if (n < 1) throw new IllegalArgumentException();
+
         int i = 1;
         double s = -1;
         double d = -1;
         double p = 0;
-
         while (i <= n) {
             d += 2;
             s *= -1;
             p += 4 * s / d;
             i++;
         }
+
         return p;
     }
 
     public double logaritimoNatural(int n, int k) {
         if (n < 1 || k < 2) throw new IllegalArgumentException();
+
         int i = 2;
         double e = n + 1;
         double numerador = n;
@@ -129,6 +133,7 @@ public class Exercicios {
             e += numerador / denominador;
             i++;
         }
+
         return e;
     }
 
