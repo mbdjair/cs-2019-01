@@ -11,7 +11,8 @@ public class Exercicios {
 
         int i = n / 100;
         int j = n % 100;
-        return Math.pow(i + j, 2) == n;
+        int soma = i + j;
+        return  (soma * soma) == n;
     }
 
     public boolean propriedade153(int n) {
