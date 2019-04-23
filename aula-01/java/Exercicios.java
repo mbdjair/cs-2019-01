@@ -6,7 +6,7 @@ public class Exercicios {
 
     public boolean propriedade3025(int n) {
         if (n < 0 || n > 9999) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("argumento fora da faixa");
         }
 
         int i = n / 100;
