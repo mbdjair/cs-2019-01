@@ -5,10 +5,10 @@
 public class Exercicios {
 
     public boolean propriedade3025(int n) {
-        if (n > 0 || n < 9999) {
+        if (n < 0 || n > 9999) {
             throw new IllegalArgumentException();
         }
-        
+
         int i = n / 100;
         int j = n % 100;
         return Math.pow(i + j, 2) == n;
