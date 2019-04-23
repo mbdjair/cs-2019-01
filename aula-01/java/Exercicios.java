@@ -9,9 +9,9 @@ public class Exercicios {
             throw new IllegalArgumentException("argumento fora da faixa");
         }
 
-        int i = n / 100;
-        int j = n % 100;
-        int soma = i + j;
+        final int i = n / 100;
+        final int j = n % 100;
+        final int soma = i + j;
         return  (soma * soma) == n;
     }
 
