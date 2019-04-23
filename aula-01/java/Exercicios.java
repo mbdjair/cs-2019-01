@@ -71,7 +71,7 @@ public class Exercicios {
             f *= i;
             i++;
         }
-        
+
         return f;
     }
 
@@ -185,7 +185,19 @@ public class Exercicios {
     }
 
     public void crivoEratostenes(int[] a, double n) {
-        if (n <= 1) throw new IllegalArgumentException();
+        if (n <= 1) {
+            throw new IllegalArgumentException("n invalido: " + n);
+        }
+
+        if (a == null) {
+            throw new IllegalArgumentException("vetor e null");
+        }
+
+        if (a.length != n) {
+            throw new IllegalArgumentException("quantidade de elementos " +
+                    "inadequada");
+        }
+
         for (int j = 1; j < a.length; j++) {
             if (a[j] != 0) {
                 throw new IllegalArgumentException();
