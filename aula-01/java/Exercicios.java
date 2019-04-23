@@ -40,7 +40,7 @@ public class Exercicios {
     public int mod(int x, int y) {
         if (y < 0 || x <= 0) throw new IllegalArgumentException();
         int s = x;
-        while (y <= s) {
+        while (s >= y) {
             s -= y;
         }
 
