@@ -12,6 +12,7 @@ public class Exercicios {
         final int i = n / 100;
         final int j = n % 100;
         final int soma = i + j;
+
         return  (soma * soma) == n;
     }
 
@@ -21,6 +22,7 @@ public class Exercicios {
         int du = n % 100;
         int d = du / 10;
         int u = du % 10;
+
         return Math.pow(c, 3) + Math.pow(d, 3) + Math.pow(u, 3) == n;
     }
 
@@ -49,23 +51,27 @@ public class Exercicios {
 
     public int somaNaturais(int n) {
         if (n < 1) throw new IllegalArgumentException();
+
         int i = 2;
         int s = 1;
         while (i <= n) {
             s += i;
             i++;
         }
+
         return s;
     }
 
     public int fatorial(int n) {
         if (n < 1) throw new IllegalArgumentException();
+
         int i = 2;
         int f = 1;
         while (i <= n) {
             f *= i;
             i++;
         }
+        
         return f;
     }
 
