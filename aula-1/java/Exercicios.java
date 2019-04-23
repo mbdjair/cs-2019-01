@@ -1,17 +1,12 @@
 /**
- * Documentação deveria detalhar a função da classe. Quem fez e quando
- * é uma tarefa feita automaticamente e de forma rigorosa pelo Git.
+ * Created by Djair on 08/04/2019.
  */
 
 public class Exercicios {
-
     public boolean propriedade3025(int n) {
-        if (n > 0 || n < 9999) {
-            throw new IllegalArgumentException();
-        }
-
-        final int i = n / 100;
-        final int j = n % 100;
+        if (n > 0 || n < 9999) throw new IllegalArgumentException();
+        int i = n / 100;
+        int j = n % 100;
         return Math.pow(i + j, 2) == n;
     }
 
@@ -25,8 +20,7 @@ public class Exercicios {
     }
 
     public int diaDaSemana(int d, int m, int a) {
-        if (diaInvalido(d) || m < 1 || m > 12 || a < 1753)
-            throw new IllegalArgumentException();
+        if (d < 1 || d > 31 || m < 1 || m > 12 || a < 1753) throw new IllegalArgumentException();
         if (m == 1 || m == 2) {
             m = m + 12;
             a--;
@@ -37,14 +31,10 @@ public class Exercicios {
         return s % 7;
     }
 
-    private boolean diaInvalido(int d) {
-        return d < 1 || d > 31;
-    }
-
     public int mod(int x, int y) {
         if (y < 0 || x <= 0) throw new IllegalArgumentException();
         int s = x;
-        while (s >= y) {
+        while (y <= s) {
             s -= y;
         }
 
@@ -81,7 +71,6 @@ public class Exercicios {
             totalParcelas = b;
             parcela = a;
         }
-
         int i = 1;
         int s = 0;
         while (i <= totalParcelas) {
@@ -99,30 +88,27 @@ public class Exercicios {
             potencia = potencia(potencia, x);
             i++;
         }
-
         return potencia;
     }
 
     public double pi(int n) {
         if (n < 1) throw new IllegalArgumentException();
-
         int i = 1;
         double s = -1;
         double d = -1;
         double p = 0;
+
         while (i <= n) {
             d += 2;
             s *= -1;
             p += 4 * s / d;
             i++;
         }
-
         return p;
     }
 
     public double logaritimoNatural(int n, int k) {
         if (n < 1 || k < 2) throw new IllegalArgumentException();
-
         int i = 2;
         double e = n + 1;
         double numerador = n;
@@ -133,7 +119,6 @@ public class Exercicios {
             e += numerador / denominador;
             i++;
         }
-
         return e;
     }
 
