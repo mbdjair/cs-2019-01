@@ -130,7 +130,7 @@ public class Exercicios {
         int potencia = 1;
         int i = 1;
         while (i <= y) {
-            potencia = potencia(potencia, x);
+            potencia = produto(potencia, x);
             i++;
         }
 
