@@ -166,7 +166,7 @@ public class Exercicios {
         return potencia;
     }
 
-    public double pi(int n) {
+    public double pi(final int n) {
         if (n < 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
@@ -186,7 +186,7 @@ public class Exercicios {
         return p;
     }
 
-    public double logaritimoNatural(int n, int k) {
+    public double logaritimoNatural(final int n, final int k) {
         if (n < 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
@@ -208,7 +208,7 @@ public class Exercicios {
         return e;
     }
 
-    public double razaoAurea(int x, int y, int k) {
+    public double razaoAurea(final int x, final int y, final int k) {
         if (x < 0) {
             throw new IllegalArgumentException("valor de x inválido");
         }
@@ -232,7 +232,7 @@ public class Exercicios {
         return c / a;
     }
 
-    public boolean quadradoPerfeito(int n) {
+    public boolean quadradoPerfeito(final int n) {
         if (n < 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
@@ -247,7 +247,7 @@ public class Exercicios {
         return s == n;
     }
 
-    public double raiz(int n, int i) {
+    public double raiz(final int n, int i) {
         if (n < 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
@@ -261,7 +261,7 @@ public class Exercicios {
         return r;
     }
 
-    public boolean primo(int n) {
+    public boolean primo(final int n) {
         if (n <= 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
@@ -277,7 +277,7 @@ public class Exercicios {
         return true;
     }
 
-    public void crivoEratostenes(int[] a, double n) {
+    public void crivoEratostenes(final int[] a, final double n) {
         if (n <= 1) {
             throw new IllegalArgumentException("valor de n deve ser maior que 1");
         }
@@ -289,7 +289,7 @@ public class Exercicios {
         }
         for (int j = 0; j < a.length; j++) {
             if (a[j] != 0) {
-                throw new IllegalArgumentException("não são permitidos elemento diferentes de 0 como a["+j+"]");
+                throw new IllegalArgumentException("não são permitidos elemento diferentes de 0 como a[" + j + "]");
             }
         }
 
@@ -311,10 +311,10 @@ public class Exercicios {
     }
 
     public int mdc(int a, int b) {
-        if (a < b ) {
+        if (a < b) {
             throw new IllegalArgumentException("o valor de a deve ser maior ou igual a b");
         }
-        if( b < 0) {
+        if (b < 0) {
             throw new IllegalArgumentException("o valor de b deve ser maior ou igual a 0");
         }
 
@@ -328,10 +328,10 @@ public class Exercicios {
     }
 
     public int mdc2(int a, int b) {
-        if (a < b ) {
+        if (a < b) {
             throw new IllegalArgumentException("O valor de a deve ser maior ou igual a b");
         }
-        if(b < 0) {
+        if (b < 0) {
             throw new IllegalArgumentException("O valor de b deve ser maior ou igual a 0");
         }
 
@@ -346,7 +346,7 @@ public class Exercicios {
         return a;
     }
 
-    public int horner(int x, int g, int... a) {
+    public int horner(final int x, final int g, final int... a) {
         if (g < 1) {
             throw new IllegalArgumentException("o valor de g deve ser maior ou igual a 1");
         }
@@ -365,7 +365,7 @@ public class Exercicios {
     }
 
 
-    public int fibonacci(int n) {
+    public int fibonacci(final int n) {
         if (n < 0) {
             throw new IllegalArgumentException("o valor de n deve ser maior ou igual a 0");
         }
@@ -387,7 +387,7 @@ public class Exercicios {
         return c;
     }
 
-    public boolean cpf(int[] d) {
+    public boolean cpf(final int[] d) {
         if (d.length != 11) {
 
             return false;
@@ -401,7 +401,7 @@ public class Exercicios {
         return dj == d[9] && dk == d[10];
     }
 
-    public boolean cpf2(int[] d) {
+    public boolean cpf2(final int[] d) {
         if (d.length != 11) {
 
             return false;
