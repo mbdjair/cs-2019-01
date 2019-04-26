@@ -28,34 +28,46 @@ public class Exercicios {
         return Math.pow(c, 3) + Math.pow(d, 3) + Math.pow(u, 3) == n;
     }
 
-    public int diaDaSemana(final int d, int m, int a) {
-        if (isDiaInvalido(d, m, a)) {
-            throw new IllegalArgumentException("dia inválido");
-        }
-        if (isMesInvalido(m)) {
+    public int diaDaSemana(final int dia, final int mes, final int ano) {
+        if (isDiaInvalido(dia)) {
             throw new IllegalArgumentException("mes inválido");
         }
-        if (isAnoInvalido(a)) {
+
+        if (isMesInvalido(mes)) {
+            throw new IllegalArgumentException("mes inválido");
+        }
+
+        if (isAnoInvalido(ano)) {
             throw new IllegalArgumentException("ano invalido");
         }
 
+        if (isDataInvalida(dia, mes, ano)) {
+            throw new IllegalArgumentException("data inválido");
+        }
+
+        int m = mes;
+        int a = ano;
         if (m == 1 || m == 2) {
             m = m + 12;
             a--;
         }
-        int s = d + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
+
+        int s = dia + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
 
         return s % 7;
+    }
+
+    private boolean isDiaInvalido(int d) {
+        return d < 1 || d > 31;
     }
 
     boolean isAnoBissexto(final int ano) {
         return ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0;
     }
 
-    private boolean isDiaInvalido(final int d, final int m, final int a) {
+    private boolean isDataInvalida(final int d, final int m, final int a) {
         if (m == 2) {
             if (isAnoBissexto(a)) {
-
                 return d < 1 || d > 29;
             }
 
@@ -63,7 +75,6 @@ public class Exercicios {
         }
 
         if (m == 4 || m == 6 || m == 9 || m == 11) {
-
             return d < 1 || d > 30;
         }
 
@@ -85,13 +96,14 @@ public class Exercicios {
         if (y < 0) {
             throw new IllegalArgumentException("valor de y inválido");
         }
+
         if (x <= 0) {
             throw new IllegalArgumentException("valor de x inválido");
         }
 
         int s = x;
-        while (y <= s) {
-            s -= y;
+        while (s >= y) {
+            s = s - y;
         }
 
         return s;
@@ -105,8 +117,8 @@ public class Exercicios {
         int i = 2;
         int s = 1;
         while (i <= n) {
-            s += i;
-            i++;
+            s = s + i;
+            i = i + 1;
         }
 
         return s;
@@ -120,8 +132,8 @@ public class Exercicios {
         int i = 2;
         int f = 1;
         while (i <= n) {
-            f *= i;
-            i++;
+            f = f * i;
+            i = i + 1;
         }
 
         return f;
@@ -131,11 +143,12 @@ public class Exercicios {
         if (a < 0) {
             throw new IllegalArgumentException("valor de a inválido");
         }
+
         if (b < 0) {
             throw new IllegalArgumentException("valor de b inválido");
         }
 
-        boolean bMenorA = b < a;
+        final boolean bMenorA = b < a;
         final int totalParcelas = !bMenorA ? a : b;
         int parcela = !bMenorA ? b : a;
         int i = 1;
@@ -152,6 +165,7 @@ public class Exercicios {
         if (x < 0) {
             throw new IllegalArgumentException("valor de x inválido");
         }
+
         if (y < 0) {
             throw new IllegalArgumentException("valor de y inválido");
         }
@@ -160,7 +174,7 @@ public class Exercicios {
         int i = 1;
         while (i <= y) {
             potencia = produto(potencia, x);
-            i++;
+            i = i + 1;
         }
 
         return potencia;
@@ -177,10 +191,10 @@ public class Exercicios {
         double p = 0;
 
         while (i <= n) {
-            d += 2;
-            s *= -1;
-            p += 4 * s / d;
-            i++;
+            d = d + 2;
+            s = s * -1;
+            p = p + (4 * s) / d;
+            i = i + 1;
         }
 
         return p;
@@ -190,6 +204,7 @@ public class Exercicios {
         if (n < 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
+
         if (k < 2) {
             throw new IllegalArgumentException("valor de k inválido");
         }
@@ -199,10 +214,10 @@ public class Exercicios {
         double numerador = n;
         double denominador = 1;
         while (i <= k) {
-            numerador *= numerador;
-            denominador *= i;
-            e += numerador / denominador;
-            i++;
+            numerador = numerador * numerador;
+            denominador = denominador * i;
+            e = e + numerador / denominador;
+            i = i + 1;
         }
 
         return e;
@@ -212,9 +227,11 @@ public class Exercicios {
         if (x < 0) {
             throw new IllegalArgumentException("valor de x inválido");
         }
+
         if (y <= x) {
             throw new IllegalArgumentException("y deve ser menor que x");
         }
+
         if (k <= 0) {
             throw new IllegalArgumentException("valor de k inválido");
         }
@@ -224,9 +241,9 @@ public class Exercicios {
         int i = 1;
         while (i <= k) {
             double t = c;
-            c += a;
+            c = c + a;
             a = t;
-            i++;
+            i = i + 1;
         }
 
         return c / a;
@@ -240,18 +257,19 @@ public class Exercicios {
         int i = 1;
         int s = 1;
         while (s < n) {
-            i += 2;
-            s += i;
+            i = i + 2;
+            s = s + i;
         }
 
         return s == n;
     }
 
-    public double raiz(final int n, int i) {
+    public double raiz(final int n, final int j) {
         if (n < 1) {
             throw new IllegalArgumentException("valor de n inválido");
         }
 
+        int i = j;
         double r = 1;
         while (0 <= i) {
             r = (r + n / r) / 2;
@@ -271,7 +289,8 @@ public class Exercicios {
             if (n % 2 == 0) {
                 return false;
             }
-            i += 1;
+
+            i = i + 1;
         }
 
         return true;
@@ -281,16 +300,20 @@ public class Exercicios {
         if (n <= 1) {
             throw new IllegalArgumentException("valor de n deve ser maior que 1");
         }
+
         if (a == null) {
             throw new IllegalArgumentException("a não pode ser nulo");
         }
+
         if (a.length != n) {
             throw new IllegalArgumentException("n deve ser o tamanho do vetor a");
         }
+
         for (int j = 0; j < a.length; j++) {
             if (a[j] != 0) {
                 throw new IllegalArgumentException("não são permitidos elemento diferentes de 0 como a[" + j + "]");
             }
+
         }
 
         int i = 2;
@@ -303,44 +326,52 @@ public class Exercicios {
             int multiplo = i + i;
             while (multiplo <= n) {
                 a[multiplo] = 1;
-                multiplo += i;
+                multiplo = multiplo + i;
             }
 
-            i += 1;
+            i = i + 1;
         }
+
     }
 
-    public int mdc(int a, int b) {
-        if (a < b) {
-            throw new IllegalArgumentException("o valor de a deve ser maior ou igual a b");
-        }
-        if (b < 0) {
-            throw new IllegalArgumentException("o valor de b deve ser maior ou igual a 0");
+    public int mdc(final int m, final int n) {
+        if (m < n) {
+            throw new IllegalArgumentException("O valor de a deve ser maior ou igual a b");
         }
 
+        if (n < 0) {
+            throw new IllegalArgumentException("O valor de b deve ser maior ou igual a 0");
+        }
+
+        int a = m;
+        int b = n;
         while (b != 0) {
-            int m = a % b;
+            int t = a % b;
             a = b;
-            b = m;
+            b = t;
         }
 
         return a;
     }
 
-    public int mdc2(int a, int b) {
-        if (a < b) {
+    public int mdc2(final int m, final int n) {
+        if (m < n) {
             throw new IllegalArgumentException("O valor de a deve ser maior ou igual a b");
         }
-        if (b < 0) {
+
+        if (n < 0) {
             throw new IllegalArgumentException("O valor de b deve ser maior ou igual a 0");
         }
 
+        int a = m;
+        int b = n;
         while (a != b) {
             if (a > b) {
-                a -= b;
+                a = a - b;
             } else {
-                b -= a;
+                b = b - a;
             }
+
         }
 
         return a;
@@ -350,6 +381,7 @@ public class Exercicios {
         if (g < 1) {
             throw new IllegalArgumentException("o valor de g deve ser maior ou igual a 1");
         }
+
         if (a == null) {
             throw new IllegalArgumentException("o valor de a não pode ser null");
         }
@@ -358,7 +390,7 @@ public class Exercicios {
         int i = 1;
         while (i < g) {
             p = p * x + a[i];
-            i += 1;
+            i = i + 1;
         }
 
         return p;
@@ -373,15 +405,15 @@ public class Exercicios {
         int a = 0;
         int c = 1;
         if (n == 0 || n == 1) {
-
             return n;
         }
+
         int i = 2;
         while (i <= n) {
             int t = c;
-            c += a;
+            c = c + a;
             a = t;
-            i += 1;
+            i = i + 1;
         }
 
         return c;
@@ -389,7 +421,6 @@ public class Exercicios {
 
     public boolean cpf(final int[] d) {
         if (d.length != 11) {
-
             return false;
         }
 
@@ -403,7 +434,6 @@ public class Exercicios {
 
     public boolean cpf2(final int[] d) {
         if (d.length != 11) {
-
             return false;
         }
 
@@ -411,10 +441,11 @@ public class Exercicios {
         int p = d[8];
         int s = d[8];
         while (0 <= c) {
-            p += d[c];
-            s += p;
-            c--;
+            p = p + d[c];
+            s = s + p;
+            c = c - 1;
         }
+
         int j = mod(mod(s, 11), 10);
         int k = mod(mod(s - p + 9 * d[9], 11), 10);
 
