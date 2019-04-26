@@ -30,7 +30,7 @@ public class Exercicios {
 
     public int diaDaSemana(final int dia, final int mes, final int ano) {
         if (isDiaInvalido(dia)) {
-            throw new IllegalArgumentException("mes inválido");
+            throw new IllegalArgumentException("dia inválido");
         }
 
         if (isMesInvalido(mes)) {
@@ -42,7 +42,7 @@ public class Exercicios {
         }
 
         if (isDataInvalida(dia, mes, ano)) {
-            throw new IllegalArgumentException("data inválido");
+            throw new IllegalArgumentException("data inválida");
         }
 
         int m = mes;
