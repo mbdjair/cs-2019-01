@@ -129,10 +129,10 @@ public class Exercicios {
 
     public int produto(final int a, final int b) {
         if (a < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de a inválido");
         }
         if (b < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de b inválido");
         }
 
         boolean bMenorA = b < a;
@@ -150,10 +150,10 @@ public class Exercicios {
 
     public int potencia(final int x, final int y) {
         if (x < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de x inválido");
         }
         if (y < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de y inválido");
         }
 
         int potencia = 1;
@@ -168,7 +168,7 @@ public class Exercicios {
 
     public double pi(int n) {
         if (n < 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de n inválido");
         }
 
         int i = 1;
@@ -188,10 +188,10 @@ public class Exercicios {
 
     public double logaritimoNatural(int n, int k) {
         if (n < 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de n inválido");
         }
         if (k < 2) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de k inválido");
         }
 
         int i = 2;
@@ -210,13 +210,13 @@ public class Exercicios {
 
     public double razaoAurea(int x, int y, int k) {
         if (x < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de x inválido");
         }
         if (y <= x) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("y deve ser menor que x");
         }
         if (k <= 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de k inválido");
         }
 
         double c = y;
@@ -234,7 +234,7 @@ public class Exercicios {
 
     public boolean quadradoPerfeito(int n) {
         if (n < 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de n inválido");
         }
 
         int i = 1;
@@ -249,7 +249,7 @@ public class Exercicios {
 
     public double raiz(int n, int i) {
         if (n < 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de n inválido");
         }
 
         double r = 1;
@@ -263,7 +263,7 @@ public class Exercicios {
 
     public boolean primo(int n) {
         if (n <= 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de n inválido");
         }
 
         int i = 2;
@@ -279,14 +279,17 @@ public class Exercicios {
 
     public void crivoEratostenes(int[] a, double n) {
         if (n <= 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("valor de n deve ser maior que 1");
+        }
+        if (a == null) {
+            throw new IllegalArgumentException("a não pode ser nulo");
         }
         if (a.length != n) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("n deve ser o tamanho do vetor a");
         }
-        for (int j = 1; j < a.length; j++) {
+        for (int j = 0; j < a.length; j++) {
             if (a[j] != 0) {
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("não são permitidos elemento diferentes de 0 como a["+j+"]");
             }
         }
 
@@ -309,10 +312,10 @@ public class Exercicios {
 
     public int mdc(int a, int b) {
         if (a < b ) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("o valor de a deve ser maior ou igual a b");
         }
         if( b < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("o valor de b deve ser maior ou igual a 0");
         }
 
         while (b != 0) {
@@ -326,10 +329,10 @@ public class Exercicios {
 
     public int mdc2(int a, int b) {
         if (a < b ) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("O valor de a deve ser maior ou igual a b");
         }
         if(b < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("O valor de b deve ser maior ou igual a 0");
         }
 
         while (a != b) {
@@ -343,9 +346,12 @@ public class Exercicios {
         return a;
     }
 
-    public int horner(int x, int g, int[] a) {
+    public int horner(int x, int g, int... a) {
         if (g < 1) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("o valor de g deve ser maior ou igual a 1");
+        }
+        if (a == null) {
+            throw new IllegalArgumentException("o valor de a não pode ser null");
         }
 
         int p = a[0];
@@ -361,7 +367,7 @@ public class Exercicios {
 
     public int fibonacci(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("o valor de n deve ser maior ou igual a 0");
         }
 
         int a = 0;
@@ -383,7 +389,8 @@ public class Exercicios {
 
     public boolean cpf(int[] d) {
         if (d.length != 11) {
-            throw new IllegalArgumentException();
+
+            return false;
         }
 
         int j = d[0] + 2 * d[1] + 3 * d[2] + 4 * d[3] + 5 * d[4] + 6 * d[5] + 7 * d[6] + 8 * d[7] + 9 * d[8];
@@ -396,7 +403,8 @@ public class Exercicios {
 
     public boolean cpf2(int[] d) {
         if (d.length != 11) {
-            throw new IllegalArgumentException();
+
+            return false;
         }
 
         int c = 7;
