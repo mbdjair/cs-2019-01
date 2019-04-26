@@ -6,7 +6,7 @@ public class Exercicios {
 
     public boolean propriedade3025(final int n) {
         if (n < 0 || n > 9999) {
-            throw new IllegalArgumentException("O valor de \"n\" é inválido");
+            throw new IllegalArgumentException("argumento fora da faixa");
         }
 
         final int i = n / 100;
@@ -17,7 +17,7 @@ public class Exercicios {
 
     public boolean propriedade153(final int n) {
         if (n < 100 || n > 999) {
-            throw new IllegalArgumentException("O valor de \"n\" é inválido");
+            throw new IllegalArgumentException("argumento fora da faixa");
         }
 
         final int c = n / 100;
@@ -94,11 +94,11 @@ public class Exercicios {
 
     public int mod(final int x, final int y) {
         if (y < 0) {
-            throw new IllegalArgumentException("valor de y inválido");
+            throw new IllegalArgumentException("argumento y fora do faixa");
         }
 
         if (x <= 0) {
-            throw new IllegalArgumentException("valor de x inválido");
+            throw new IllegalArgumentException("argumento x fora do faixa");
         }
 
         int s = x;
@@ -111,7 +111,7 @@ public class Exercicios {
 
     public int somaNaturais(final int n) {
         if (n < 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora do faixa");
         }
 
         int i = 2;
@@ -126,7 +126,7 @@ public class Exercicios {
 
     public int fatorial(final int n) {
         if (n < 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora do faixa");
         }
 
         int i = 2;
@@ -141,11 +141,11 @@ public class Exercicios {
 
     public int produto(final int a, final int b) {
         if (a < 0) {
-            throw new IllegalArgumentException("valor de a inválido");
+            throw new IllegalArgumentException("argumento a fora do faixa");
         }
 
         if (b < 0) {
-            throw new IllegalArgumentException("valor de b inválido");
+            throw new IllegalArgumentException("argumento b fora do faixa");
         }
 
         final boolean bMenorA = b < a;
@@ -163,11 +163,11 @@ public class Exercicios {
 
     public int potencia(final int x, final int y) {
         if (x < 0) {
-            throw new IllegalArgumentException("valor de x inválido");
+            throw new IllegalArgumentException("argumento x fora do faixa");
         }
 
         if (y < 0) {
-            throw new IllegalArgumentException("valor de y inválido");
+            throw new IllegalArgumentException("argumento y fora do faixa");
         }
 
         int potencia = 1;
@@ -182,7 +182,7 @@ public class Exercicios {
 
     public double pi(final int n) {
         if (n < 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora da faixa");
         }
 
         int i = 1;
@@ -202,11 +202,11 @@ public class Exercicios {
 
     public double logaritimoNatural(final int n, final int k) {
         if (n < 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora da faixa");
         }
 
         if (k < 2) {
-            throw new IllegalArgumentException("valor de k inválido");
+            throw new IllegalArgumentException("argumento fora da faixa");
         }
 
         int i = 2;
@@ -225,15 +225,15 @@ public class Exercicios {
 
     public double razaoAurea(final int x, final int y, final int k) {
         if (x < 0) {
-            throw new IllegalArgumentException("valor de x inválido");
+            throw new IllegalArgumentException("argumento x fora da faixa");
         }
 
         if (y <= x) {
-            throw new IllegalArgumentException("y deve ser menor que x");
+            throw new IllegalArgumentException("argumento y menor ou igual a x");
         }
 
         if (k <= 0) {
-            throw new IllegalArgumentException("valor de k inválido");
+            throw new IllegalArgumentException("argumento k fora da faixa");
         }
 
         double c = y;
@@ -251,7 +251,7 @@ public class Exercicios {
 
     public boolean quadradoPerfeito(final int n) {
         if (n < 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora da faixa");
         }
 
         int i = 1;
@@ -266,7 +266,7 @@ public class Exercicios {
 
     public double raiz(final int n, final int j) {
         if (n < 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora da faixa");
         }
 
         int i = j;
@@ -281,7 +281,7 @@ public class Exercicios {
 
     public boolean primo(final int n) {
         if (n <= 1) {
-            throw new IllegalArgumentException("valor de n inválido");
+            throw new IllegalArgumentException("argumento n fora da faixa");
         }
 
         int i = 2;
@@ -298,20 +298,20 @@ public class Exercicios {
 
     public void crivoEratostenes(final int[] a, final double n) {
         if (n <= 1) {
-            throw new IllegalArgumentException("valor de n deve ser maior que 1");
+            throw new IllegalArgumentException("argumento n fora da faixa");
         }
 
         if (a == null) {
-            throw new IllegalArgumentException("a não pode ser nulo");
+            throw new IllegalArgumentException("argumento a nulo");
         }
 
         if (a.length != n) {
-            throw new IllegalArgumentException("n deve ser o tamanho do vetor a");
+            throw new IllegalArgumentException("argumento n diferente do comprimento a");
         }
 
         for (int j = 0; j < a.length; j++) {
             if (a[j] != 0) {
-                throw new IllegalArgumentException("não são permitidos elemento diferentes de 0 como a[" + j + "]");
+                throw new IllegalArgumentException("elemento a[" + j + "] diferente de 0");
             }
 
         }
