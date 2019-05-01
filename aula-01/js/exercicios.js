@@ -1,9 +1,9 @@
 function mdc(m, n) {
-    if (!(m instanceof Number)) {
+    if (!(typeof m === "number")) {
         throw new TypeError("Tipo errado para o argumento m");
     }
 
-    if (!(n instanceof Number)) {
+    if (!(typeof n === "number")) {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -27,7 +27,7 @@ function mdc(m, n) {
 }
 
 function primo(n) {
-    if (!(n instanceof Number)) {
+    if (!(typeof n === "number")) {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -48,11 +48,11 @@ function primo(n) {
 }
 
 function mdc2(m, n) {
-    if (!(m instanceof Number)) {
+    if (typeof m !== "number") {
         throw new TypeError("Tipo errado para o argumento m");
     }
 
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -78,11 +78,11 @@ function mdc2(m, n) {
 }
 
 function mod(x, y) {
-    if (!(x instanceof Number)) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo inválido para argumento x");
     }
 
-    if (!(y instanceof Number)) {
+    if (typeof y !== "number") {
         throw new TypeError("Tipo inválido para argumento y");
     }
 
@@ -103,12 +103,12 @@ function mod(x, y) {
 }
 
 function produto(a, b) {
-    if (!(a instanceof Number)) {
+    if (typeof a !== "number") {
         throw new TypeError("Tipo errado para o argumento a");
     }
 
 
-    if (!(b instanceof Number)) {
+    if (typeof b !== "number") {
         throw new TypeError("tipo errado para o argumento b");
     }
 
@@ -157,11 +157,11 @@ function pi(n) {
 }
 
 function potencia(x, y) {
-    if (!(x instanceof Number)) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(y instanceof Number)) {
+    if (typeof y !== "number") {
         throw new TypeError("Tipo errado para o argumento y");
     }
 
@@ -184,7 +184,7 @@ function potencia(x, y) {
 }
 
 function propriedade3025(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -201,7 +201,7 @@ function propriedade3025(n) {
 }
 
 function propriedade3025(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -257,15 +257,15 @@ function raiz(n, j) {
 
 function razaoAurea(x, y, k) {
 
-    if (!(x instanceof Number)) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(y instanceof Number)) {
+    if (typeof y !== "number") {
         throw new TypeError("Tipo errado para o argumento y");
     }
 
-    if (!(k instanceof Number)) {
+    if (typeof k !== "number") {
         throw new TypeError("Tipo errado para o argumento k");
     }
 
@@ -294,7 +294,7 @@ function razaoAurea(x, y, k) {
 }
 
 function somaNaturais(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para argumento n");
     }
 
@@ -370,7 +370,7 @@ function crivoEratostenes(a, n) {
     let i = 2;
     const limite = Math.abs(Math.sqrt(n));
     while (i <= limite) {
-        if (!(a[i] instanceof Number)) {
+        if (!(typeof a[i] === "number")) {
             throw new TypeError("Tipo errado para o argumento a[" + i + "]");
         }
 
@@ -389,15 +389,15 @@ function crivoEratostenes(a, n) {
 }
 
 function diaDaSemana(dia, mes, ano) {
-    if (!(dia instanceof Number)) {
+    if (!(typeof dia === "number")) {
         throw new TypeError("argumento dia com tipo errado");
     }
 
-    if (!(mes instanceof Number)) {
+    if (!(typeof mes === "number")) {
         throw new TypeError("argumento mes com tipo errado");
     }
 
-    if (!(ano instanceof Number)) {
+    if (!(typeof ano === "number")) {
         throw new TypeError("argumento ano com tipo errado");
     }
 
@@ -430,7 +430,7 @@ function diaDaSemana(dia, mes, ano) {
 }
 
 function isDiaInvalido(d) {
-    if (!(d instanceof Number)) {
+    if (!(typeof d === "number")) {
         throw new TypeError("argumento d com tipo errado");
     }
 
@@ -438,7 +438,7 @@ function isDiaInvalido(d) {
 }
 
 function isAnoBissexto(ano) {
-    if (!(ano instanceof Number)) {
+    if (!(typeof ano === "number")) {
         throw new TypeError("argumento ano com tipo errado");
     }
 
@@ -446,15 +446,15 @@ function isAnoBissexto(ano) {
 }
 
 function isDataInvalida(d, m, a) {
-    if (!(d instanceof Number)) {
+    if (!(typeof d === "number")) {
         throw new TypeError("argumento d com tipo errado");
     }
 
-    if (!(m instanceof Number)) {
+    if (!(typeof m === "number")) {
         throw new TypeError("argumento com tipo errado");
     }
 
-    if (!(a instanceof Number)) {
+    if (!(typeof a === "number")) {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -474,7 +474,7 @@ function isDataInvalida(d, m, a) {
 }
 
 function isMesInvalido(m) {
-    if (!(m instanceof Number)) {
+    if (!(typeof m === "number")) {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -482,7 +482,7 @@ function isMesInvalido(m) {
 }
 
 function isAnoInvalido(a) {
-    if (!(a instanceof Number)) {
+    if (!(typeof a === "number")) {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -490,7 +490,7 @@ function isAnoInvalido(a) {
 }
 
 function fatorial(n) {
-    if (!(n instanceof Number)) {
+    if (!(typeof n === "number")) {
         throw new TypeError("argumento n com tipo errado");
     }
 
@@ -509,7 +509,7 @@ function fatorial(n) {
 }
 
 function fibonacci(n) {
-    if (!(n instanceof Number)) {
+    if (!(typeof n === "number")) {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -540,11 +540,11 @@ function horner(x, g, a) {
     }
 
 
-    if (!(x instanceof Number)) {
+    if (!(typeof x === "number")) {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(g instanceof Number)) {
+    if (!(typeof g === "number")) {
         throw new TypeError("Tipo errado para o argumento g");
     }
 
@@ -563,11 +563,11 @@ function horner(x, g, a) {
 }
 
 function logaritimoNatural(n, k) {
-    if (!(n instanceof Number)) {
+    if (!(typeof n === "number")) {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
-    if (!(k instanceof Number)) {
+    if (!(typeof k === "number")) {
         throw new TypeError("Tipo errado para o argumento k");
     }
 
