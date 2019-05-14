@@ -1,9 +1,9 @@
 function mdc(m, n) {
-    if (!(typeof m === "number")) {
+    if (typeof m !== "number") {
         throw new TypeError("Tipo errado para o argumento m");
     }
 
-    if (!(typeof n === "number")) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -27,7 +27,7 @@ function mdc(m, n) {
 }
 
 function primo(n) {
-    if (!(typeof n === "number")) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -133,7 +133,7 @@ function produto(a, b) {
 }
 
 function pi(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -213,7 +213,7 @@ function propriedade3025(n) {
     const j = n % 100;
     const soma = i + j;
 
-    return  (soma * soma) === n;
+    return (soma * soma) === n;
 }
 
 function quadradoPerfeito(n) {
@@ -232,12 +232,12 @@ function quadradoPerfeito(n) {
 }
 
 function raiz(n, j) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
 
-    if (!(j instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento j");
     }
 
@@ -370,7 +370,7 @@ function crivoEratostenes(a, n) {
     let i = 2;
     const limite = Math.abs(Math.sqrt(n));
     while (i <= limite) {
-        if (!(typeof a[i] === "number")) {
+        if (typeof a[i] !== "number") {
             throw new TypeError("Tipo errado para o argumento a[" + i + "]");
         }
 
@@ -379,7 +379,7 @@ function crivoEratostenes(a, n) {
         }
 
         let multiplo = i + i;
-        while  (multiplo <= n) {
+        while (multiplo <= n) {
             a[multiplo] = 1;
             multiplo = multiplo + i;
         }
@@ -389,15 +389,15 @@ function crivoEratostenes(a, n) {
 }
 
 function diaDaSemana(dia, mes, ano) {
-    if (!(typeof dia === "number")) {
+    if (typeof dia !== "number") {
         throw new TypeError("argumento dia com tipo errado");
     }
 
-    if (!(typeof mes === "number")) {
+    if (typeof mes !== "number") {
         throw new TypeError("argumento mes com tipo errado");
     }
 
-    if (!(typeof ano === "number")) {
+    if (typeof ano !== "number") {
         throw new TypeError("argumento ano com tipo errado");
     }
 
@@ -430,7 +430,7 @@ function diaDaSemana(dia, mes, ano) {
 }
 
 function isDiaInvalido(d) {
-    if (!(typeof d === "number")) {
+    if (typeof d !== "number") {
         throw new TypeError("argumento d com tipo errado");
     }
 
@@ -438,7 +438,7 @@ function isDiaInvalido(d) {
 }
 
 function isAnoBissexto(ano) {
-    if (!(typeof ano === "number")) {
+    if (typeof ano !== "number") {
         throw new TypeError("argumento ano com tipo errado");
     }
 
@@ -446,15 +446,15 @@ function isAnoBissexto(ano) {
 }
 
 function isDataInvalida(d, m, a) {
-    if (!(typeof d === "number")) {
+    if (typeof d !== "number") {
         throw new TypeError("argumento d com tipo errado");
     }
 
-    if (!(typeof m === "number")) {
+    if (typeof m !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
-    if (!(typeof a === "number")) {
+    if (typeof a !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -474,7 +474,7 @@ function isDataInvalida(d, m, a) {
 }
 
 function isMesInvalido(m) {
-    if (!(typeof m === "number")) {
+    if (typeof m !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -482,7 +482,7 @@ function isMesInvalido(m) {
 }
 
 function isAnoInvalido(a) {
-    if (!(typeof a === "number")) {
+    if (typeof a !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -490,7 +490,7 @@ function isAnoInvalido(a) {
 }
 
 function fatorial(n) {
-    if (!(typeof n === "number")) {
+    if (typeof n !== "number") {
         throw new TypeError("argumento n com tipo errado");
     }
 
@@ -509,7 +509,7 @@ function fatorial(n) {
 }
 
 function fibonacci(n) {
-    if (!(typeof n === "number")) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
@@ -540,11 +540,11 @@ function horner(x, g, a) {
     }
 
 
-    if (!(typeof x === "number")) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(typeof g === "number")) {
+    if (typeof g !== "number") {
         throw new TypeError("Tipo errado para o argumento g");
     }
 
@@ -563,11 +563,11 @@ function horner(x, g, a) {
 }
 
 function logaritimoNatural(n, k) {
-    if (!(typeof n === "number")) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
-    if (!(typeof k === "number")) {
+    if (typeof k !== "number") {
         throw new TypeError("Tipo errado para o argumento k");
     }
 
