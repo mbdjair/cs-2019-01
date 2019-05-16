@@ -1,5 +1,16 @@
 import {produto} from "./produto";
 
+/**
+* Realiza a potencia do primeiro pelo segundo argumento
+*
+* @param x
+* @param y
+*
+* @returns {number}
+*
+* @throws {TypeError} Se qualquer um dos argumentos não for um número.
+* @throws {RangeError} Se o qualquer argumento for menor que zero.
+*/
 function potencia(x, y) {
     if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");

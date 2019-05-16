@@ -1,3 +1,15 @@
+/**
+* Realiza mdc dos argumentos fornecidos
+*
+* @param m
+* @param n
+*
+* @returns {number}
+*
+* @throws {TypeError} Se qualquer um dos argumentos não for um número.
+* @throws {RangeError} Se o primeiro argumento for menor que zero.
+* @throws {RangeError} Se o segundo argumento igual zero.
+*/
 function mdc(m, n) {
     if (typeof m !== "number") {
         throw new TypeError("Tipo errado para o argumento m");
