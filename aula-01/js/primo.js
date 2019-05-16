@@ -1,3 +1,13 @@
+/**
+* Verifica se o argumento é ou não primo
+*
+* @param n
+*
+* @returns {boolean}
+*
+* @throws {TypeError} Se o argumento não for um número.
+* @throws {RangeError} Se o argumento menor ou igual a 1.
+*/
 function primo(n) {
     if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");

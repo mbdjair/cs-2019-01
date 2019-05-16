@@ -1,3 +1,13 @@
+/**
+* Realiza o produto dos argumentos fornecidos
+*
+* @param n
+*
+* @returns {number}
+*
+* @throws {TypeError} Se o argumento não for um número.
+* @throws {RangeError} Se o argumento for menor que zero.
+*/
 function quadradoPerfeito(n) {
     if (n < 1) {
         throw new RangeError("Argumento n fora do intervalo");

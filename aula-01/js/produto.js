@@ -1,3 +1,14 @@
+/**
+* Realiza o produto dos argumentos fornecidos
+*
+* @param m
+* @param n
+*
+* @returns {number}
+*
+* @throws {TypeError} Se qualquer um dos argumentos não for um número.
+* @throws {RangeError} Se o qualquer argumento for menor que zero.
+*/
 export function produto(a, b) {
     if (typeof a !== "number") {
        throw new TypeError("Tipo errado para o argumento a");
