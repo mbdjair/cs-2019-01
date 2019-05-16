@@ -1,4 +1,4 @@
-import {mod} from './mod'
+import { mod } from "./mod";
 function cpf(d) {
     if (!(d instanceof Array)) {
         throw new TypeError("Tipo errado para o argumento d");

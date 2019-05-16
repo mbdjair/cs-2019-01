@@ -12,19 +12,19 @@ function diaDaSemana(dia, mes, ano) {
     }
 
 
-    if (this.isDiaInvalido(dia)) {
+    if (isDiaInvalido(dia)) {
         throw new RangeError("valor inválido para dia");
     }
 
-    if (this.isMesInvalido(mes)) {
+    if (isMesInvalido(mes)) {
         throw new RangeError("valor inválido para mes");
     }
 
-    if (this.isAnoInvalido(ano)) {
+    if (isAnoInvalido(ano)) {
         throw new RangeError("valor invalido para ano");
     }
 
-    if (this.isDataInvalida(dia, mes, ano)) {
+    if (isDataInvalida(dia, mes, ano)) {
         throw new RangeError("data inválida");
     }
 
@@ -69,7 +69,7 @@ function isDataInvalida(d, m, a) {
     }
 
     if (m === 2) {
-        if (this.isAnoBissexto(a)) {
+        if (isAnoBissexto(a)) {
             return d < 1 || d > 29;
         }
 

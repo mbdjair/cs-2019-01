@@ -1,4 +1,4 @@
-import {mod} from './mod'
+import { mod } from "./mod";
 
 function cpf2(d) {
 
