@@ -14,7 +14,7 @@ function crivoEratostenes(a, n) {
     let i = 2;
     const limite = Math.abs(Math.sqrt(n));
     while (i <= limite) {
-        if (!(a[i] instanceof Number)) {
+        if (typeof a[i] !== "number") {
             throw new TypeError("Tipo errado para o argumento a[" + i + "]");
         }
 
@@ -23,7 +23,7 @@ function crivoEratostenes(a, n) {
         }
 
         let multiplo = i + i;
-        while  (multiplo <= n) {
+        while (multiplo <= n) {
             a[multiplo] = 1;
             multiplo = multiplo + i;
         }

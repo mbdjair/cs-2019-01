@@ -1,9 +1,9 @@
 function logaritimoNatural(n, k) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 
-    if (!(k instanceof Number)) {
+    if (typeof k !== "number") {
         throw new TypeError("Tipo errado para o argumento k");
     }
 

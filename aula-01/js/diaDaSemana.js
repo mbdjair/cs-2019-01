@@ -1,13 +1,13 @@
 function diaDaSemana(dia, mes, ano) {
-    if (!(dia instanceof Number)) {
+    if (typeof dia !== "number") {
         throw new TypeError("argumento dia com tipo errado");
     }
 
-    if (!(mes instanceof Number)) {
+    if (typeof mes !== "number") {
         throw new TypeError("argumento mes com tipo errado");
     }
 
-    if (!(ano instanceof Number)) {
+    if (typeof ano !== "number") {
         throw new TypeError("argumento ano com tipo errado");
     }
 
@@ -39,9 +39,8 @@ function diaDaSemana(dia, mes, ano) {
     return s % 7;
 }
 
-
 function isDiaInvalido(d) {
-    if (!(d instanceof Number)) {
+    if (typeof d !== "number") {
         throw new TypeError("argumento d com tipo errado");
     }
 
@@ -49,7 +48,7 @@ function isDiaInvalido(d) {
 }
 
 function isAnoBissexto(ano) {
-    if (!(ano instanceof Number)) {
+    if (typeof ano !== "number") {
         throw new TypeError("argumento ano com tipo errado");
     }
 
@@ -57,15 +56,15 @@ function isAnoBissexto(ano) {
 }
 
 function isDataInvalida(d, m, a) {
-    if (!(d instanceof Number)) {
+    if (typeof d !== "number") {
         throw new TypeError("argumento d com tipo errado");
     }
 
-    if (!(m instanceof Number)) {
+    if (typeof m !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
-    if (!(a instanceof Number)) {
+    if (typeof a !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -85,7 +84,7 @@ function isDataInvalida(d, m, a) {
 }
 
 function isMesInvalido(m) {
-    if (!(m instanceof Number)) {
+    if (typeof m !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 
@@ -93,7 +92,7 @@ function isMesInvalido(m) {
 }
 
 function isAnoInvalido(a) {
-    if (!(a instanceof Number)) {
+    if (typeof a !== "number") {
         throw new TypeError("argumento com tipo errado");
     }
 

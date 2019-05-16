@@ -1,14 +1,14 @@
 function razaoAurea(x, y, k) {
 
-    if (!(x instanceof Number)) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(y instanceof Number)) {
+    if (typeof y !== "number") {
         throw new TypeError("Tipo errado para o argumento y");
     }
 
-    if (!(k instanceof Number)) {
+    if (typeof k !== "number") {
         throw new TypeError("Tipo errado para o argumento k");
     }
 

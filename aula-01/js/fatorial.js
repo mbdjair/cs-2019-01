@@ -1,5 +1,5 @@
 function fatorial(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("argumento n com tipo errado");
     }
 

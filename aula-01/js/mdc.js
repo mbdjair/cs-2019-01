@@ -1,9 +1,9 @@
 function mdc(m, n) {
-    if (!(m instanceof Number)) {
+    if (typeof m !== "number") {
         throw new TypeError("Tipo errado para o argumento m");
     }
 
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 

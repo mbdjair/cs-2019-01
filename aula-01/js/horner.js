@@ -5,11 +5,11 @@ function horner(x, g, a) {
     }
 
 
-    if (!(x instanceof Number)) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(g instanceof Number)) {
+    if (typeof g !== "number") {
         throw new TypeError("Tipo errado para o argumento g");
     }
 
@@ -23,6 +23,6 @@ function horner(x, g, a) {
         p = p * x + a[i];
         i = i + 1;
     }
-    
+
     return p;
 }

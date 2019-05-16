@@ -1,11 +1,11 @@
 import {produto} from "./produto";
 
 function potencia(x, y) {
-    if (!(x instanceof Number)) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo errado para o argumento x");
     }
 
-    if (!(y instanceof Number)) {
+    if (typeof y !== "number") {
         throw new TypeError("Tipo errado para o argumento y");
     }
 

@@ -1,5 +1,5 @@
 function primo(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para o argumento n");
     }
 

@@ -1,5 +1,5 @@
 function somaNaturais(n) {
-    if (!(n instanceof Number)) {
+    if (typeof n !== "number") {
         throw new TypeError("Tipo errado para argumento n");
     }
 

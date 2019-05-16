@@ -1,9 +1,9 @@
-export function mod(x, y) {
-    if (!(x instanceof Number)) {
+function mod(x, y) {
+    if (typeof x !== "number") {
         throw new TypeError("Tipo inválido para argumento x");
     }
 
-    if (!(y instanceof Number)) {
+    if (typeof y !== "number") {
         throw new TypeError("Tipo inválido para argumento y");
     }
 
