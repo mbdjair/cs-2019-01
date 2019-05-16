@@ -4,7 +4,7 @@ function fatorial(n) {
     }
 
     if (n < 1) {
-        throw new RangeError("Argumento n fora do intervalo");;
+        throw new RangeError("Argumento n fora do intervalo");
     }
 
     let i = 2;
