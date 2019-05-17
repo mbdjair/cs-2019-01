@@ -1,4 +1,5 @@
 .idea/
 aula-01/js/node_modules/
+aula-01/java/target/
 
 *.iml
