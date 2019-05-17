@@ -1,8 +1,13 @@
+package com.github.mbdjair.exercicios.domain;
+
 /**
  * Classe que engloba todos os objetos de exercícios da aula01
  */
 
 public class Exercicios {
+
+    public Exercicios() {
+    }
 
     public boolean propriedade3025(final int n) {
         if (n < 0 || n > 9999) {
@@ -25,7 +30,8 @@ public class Exercicios {
         final int d = du / 10;
         final int u = du % 10;
 
-        return Math.pow(c, 3) + Math.pow(d, 3) + Math.pow(u, 3) == n;
+        int result = (int) (Math.pow(c, 3) + Math.pow(d, 3) + Math.pow(u, 3));
+        return result == n;
     }
 
     public int diaDaSemana(final int dia, final int mes, final int ano) {
@@ -229,7 +235,8 @@ public class Exercicios {
         }
 
         if (y <= x) {
-            throw new IllegalArgumentException("argumento y menor ou igual a x");
+            String mensagem = "argumento y menor ou igual a x";
+            throw new IllegalArgumentException(mensagem);
         }
 
         if (k <= 0) {
@@ -306,12 +313,14 @@ public class Exercicios {
         }
 
         if (a.length != n) {
-            throw new IllegalArgumentException("argumento n diferente do comprimento a");
+            String mensagem = "argumento n diferente do comprimento a";
+            throw new IllegalArgumentException(mensagem);
         }
 
         for (int j = 0; j < a.length; j++) {
             if (a[j] != 0) {
-                throw new IllegalArgumentException("elemento a[" + j + "] diferente de 0");
+                String mensagem = "elemento a[" + j + "] diferente de 0";
+                throw new IllegalArgumentException(mensagem);
             }
 
         }
@@ -336,11 +345,13 @@ public class Exercicios {
 
     public int mdc(final int m, final int n) {
         if (m < n) {
-            throw new IllegalArgumentException("O valor de a deve ser maior ou igual a b");
+            String mensagem = "O valor de a deve ser maior ou igual a b";
+            throw new IllegalArgumentException(mensagem);
         }
 
         if (n < 0) {
-            throw new IllegalArgumentException("O valor de b deve ser maior ou igual a 0");
+            String mensagem = "O valor de b deve ser maior ou igual a 0";
+            throw new IllegalArgumentException(mensagem);
         }
 
         int a = m;
@@ -356,11 +367,13 @@ public class Exercicios {
 
     public int mdc2(final int m, final int n) {
         if (m < n) {
-            throw new IllegalArgumentException("O valor de a deve ser maior ou igual a b");
+            String mensagem = "O valor de a deve ser maior ou igual a b";
+            throw new IllegalArgumentException(mensagem);
         }
 
         if (n < 0) {
-            throw new IllegalArgumentException("O valor de b deve ser maior ou igual a 0");
+            String mensagem = "O valor de b deve ser maior ou igual a 0";
+            throw new IllegalArgumentException(mensagem);
         }
 
         int a = m;
@@ -379,11 +392,13 @@ public class Exercicios {
 
     public int horner(final int x, final int g, final int... a) {
         if (g < 1) {
-            throw new IllegalArgumentException("o valor de g deve ser maior ou igual a 1");
+            String mensagem = "o valor de g deve ser maior ou igual a 1";
+            throw new IllegalArgumentException(mensagem);
         }
 
         if (a == null) {
-            throw new IllegalArgumentException("o valor de a não pode ser null");
+            String mensagem = "o valor de a não pode ser null";
+            throw new IllegalArgumentException(mensagem);
         }
 
         int p = a[0];
@@ -399,7 +414,8 @@ public class Exercicios {
 
     public int fibonacci(final int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("o valor de n deve ser maior ou igual a 0");
+            String mensagem = "o valor de n deve ser maior ou igual a 0";
+            throw new IllegalArgumentException(mensagem);
         }
 
         int a = 0;
@@ -424,8 +440,10 @@ public class Exercicios {
             return false;
         }
 
-        int j = d[0] + 2 * d[1] + 3 * d[2] + 4 * d[3] + 5 * d[4] + 6 * d[5] + 7 * d[6] + 8 * d[7] + 9 * d[8];
-        int k = d[1] + 2 * d[2] + 3 * d[3] + 4 * d[4] + 5 * d[5] + 6 * d[6] + 7 * d[7] + 8 * d[8] + 9 * d[9];
+        int j = d[0] + 2 * d[1] + 3 * d[2] + 4 * d[3] + 5 * d[4] + 6 * d[5]
+                + 7 * d[6] + 8 * d[7] + 9 * d[8];
+        int k = d[1] + 2 * d[2] + 3 * d[3] + 4 * d[4] + 5 * d[5] + 6 * d[6]
+                + 7 * d[7] + 8 * d[8] + 9 * d[9];
         int dj = mod(mod(j, 11), 10);
         int dk = mod(mod(k, 11), 10);
 
