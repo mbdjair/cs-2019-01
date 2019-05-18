@@ -1,3 +1,10 @@
+/**
+ * Retorna o fatorial de um número n.
+ * @param {Number} n numero que será calculado o fatorial
+ * @throws {RangeError} caso o parametro seja menor que 1
+ * @throws {TypeError} caso parametro não seja um número
+ * @returns {Number} retorna o fatorial de n
+ */
 function fatorial(n) {
     if (typeof n !== "number") {
         throw new TypeError("argumento n com tipo errado");
@@ -16,3 +23,5 @@ function fatorial(n) {
 
     return f;
 }
+
+module.exports = fatorial;

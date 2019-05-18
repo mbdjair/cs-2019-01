@@ -1,3 +1,11 @@
+/**
+ * Determina o dia da semana a partir de uma data recebida como parametro
+ * @param {Number} dia o dia da data
+ * @param {Number} mes o mês da data
+ * @param {Number} ano o ano da data
+ * @throws {RangeError} caso o dia, mes, ano, o ou a data forem invalidos
+ * @returns {Number} retorna o numero equivalente ao dia da semana que foi calculado
+ */
 function diaDaSemana(dia, mes, ano) {
     if (typeof dia !== "number") {
         throw new TypeError("argumento dia com tipo errado");
@@ -36,7 +44,7 @@ function diaDaSemana(dia, mes, ano) {
     }
 
     let s = dia + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
-    return s % 7;
+    return parseInt(s) % 7;
 }
 
 function isDiaInvalido(d) {
@@ -98,3 +106,5 @@ function isAnoInvalido(a) {
 
     return a < 1753;
 }
+
+module.exports = diaDaSemana;
