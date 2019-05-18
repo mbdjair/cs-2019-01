@@ -1,15 +1,11 @@
 /**
-* Realiza o cálculo do resto da divisão do primeiro argumento pelo segundo.
-*
-* @param x
-* @param y
-*
-* @returns {number}
-*
-* @throws {TypeError} Se qualquer um dos argumentos não for um número.
-* @throws {RangeError} Se o primeiro argumento for menor ou igual zero.
-* @throws {RangeError} Se o segundo argumento for menor que zero.
-*/
+ * Retorna resto da divisão inteira de x por y
+ * @param {Number} x dividendo
+ * @param {Number} y divisor
+ * @throws {RangeError} caso x for menor ou igual 0, ou se y for menor que 0
+ * @throws {TypeError} caso algum parametro não seja um numero
+ * @returns {Number} o resto da divisão de x por y
+ */
 function mod(x, y) {
     if (typeof x !== "number") {
         throw new TypeError("Tipo inválido para argumento x");
@@ -19,12 +15,12 @@ function mod(x, y) {
         throw new TypeError("Tipo inválido para argumento y");
     }
 
-    if (y < 0) {
-        throw new RangeError("Argumento y fora do intervalo");
-    }
-
     if (x <= 0) {
         throw new RangeError("Argumento x fora do intervalo");
+    }
+
+    if (y < 0) {
+        throw new RangeError("Argumento y fora do intervalo");
     }
 
     let s = x;
