@@ -1,15 +1,12 @@
 /**
-* Realiza mdc dos argumentos fornecidos
-*
-* @param m
-* @param n
-*
-* @returns {number}
-*
-* @throws {TypeError} Se qualquer um dos argumentos não for um número.
-* @throws {RangeError} Se o primeiro argumento for menor que zero.
-* @throws {RangeError} Se o segundo argumento igual zero.
-*/
+ * Realiza mdc dos argumentos fornecidos
+ * @param {Number} m número inteiro que será utilizado para o mdc
+ * @param {Number} n número inteiro que será utilizado para o mdc
+ * @returns {Number} valor mdc
+ * @throws {TypeError} Se qualquer um dos argumentos não for um número.
+ * @throws {RangeError} caso n seja menor que 0 ou n seja maior que m
+ */
+
 function mdc(m, n) {
     if (typeof m !== "number") {
         throw new TypeError("Tipo errado para o argumento m");
@@ -20,11 +17,11 @@ function mdc(m, n) {
     }
 
     if (m < n) {
-        throw new TypeError("Tipo errado para o argumento m");
+        throw new RangeError("Parâmetro m fora do range");
     }
 
     if (n < 0) {
-        throw new TypeError("Tipo errado para o argumento n");
+        throw new RangeError("Parâmetro n fora do range");
     }
 
     let a = m;
@@ -37,3 +34,5 @@ function mdc(m, n) {
 
     return a;
 }
+
+module.exports = mdc;
