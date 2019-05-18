@@ -34,3 +34,5 @@ function mod(x, y) {
 
     return s;
 }
+
+module.exports = mod;
