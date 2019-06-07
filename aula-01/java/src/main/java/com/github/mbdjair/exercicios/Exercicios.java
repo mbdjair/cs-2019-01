@@ -1,4 +1,4 @@
-package com.github.mbdjair.exercicios.domain;
+package com.github.mbdjair.exercicios;
 
 /**
  * Classe que engloba todos os objetos de exercícios da aula01
