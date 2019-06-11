@@ -1,3 +1,5 @@
+package com.github.mbdjair.jpeg;
+
 import java.io.IOException;
 
 /**
@@ -5,16 +7,19 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) {
-        if(args == null){
-            System.out.println("A aplicação não recebeu argumentos");
+        if (args == null || args.length < 1) {
+            System.out.println("A aplicação não recebeu argumentos suficientes");
             return;
         }
 
         try {
 
             String caminhoArquivo = args[0];
-            String hexadecimal = FileCheck.obterHexadecimal(caminhoArquivo);
-            System.out.println(hexadecimal);
+            String retorno = "Não é um arquivo JPEG";
+            if (FileCheck.obterHexadecimal(caminhoArquivo)) {
+                retorno = "É um arquivo JPEG";
+            }
+            System.out.println(retorno);
 
         } catch (IOException e) {
             e.printStackTrace();

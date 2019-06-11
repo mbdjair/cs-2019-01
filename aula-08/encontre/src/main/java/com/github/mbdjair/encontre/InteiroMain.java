@@ -1,4 +1,4 @@
-package com.github.mbdjair.inteiro;
+package com.github.mbdjair.encontre;
 
 import java.io.IOException;
 
