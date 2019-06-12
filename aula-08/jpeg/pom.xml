@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.mbdjair</groupId>
-    <artifactId>exercicios</artifactId>
+    <artifactId>jpeg</artifactId>
     <packaging>jar</packaging>
     <version>1.0.1</version>
 
@@ -46,8 +46,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>
-        </project.mainClass>
+        <project.mainClass>com.github.mbdjair.jpeg.Main</project.mainClass>
         <tools.dir>${project.basedir}/tools</tools.dir>
         <pmd.plugin>3.12.0</pmd.plugin>
         <pmd.version>6.15.0</pmd.version>
