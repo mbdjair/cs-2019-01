@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Classe que possui os métodos que serão executados ao se consumir a API
+ */
 @RestController
 public class DiaDaSemanaController {
     /**

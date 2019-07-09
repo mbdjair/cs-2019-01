@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Alunoinf_2 on 04/07/2019.
+ Classe que engloba métodos que realização operações entre datas
  */
 public final class DateUtils {
 
