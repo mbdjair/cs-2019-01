@@ -7,6 +7,7 @@
 package com.github.mbdjair.diferencaDatas.application.api;
 
 import com.github.mbdjair.diferencaDatas.domain.DateUtils;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,18 +18,22 @@ import java.util.Date;
 
 @RestController
 public class DiaDaSemanaController {
-
+    /**
+     * Recupera a quantidade de dias que existem entre as duas datas recebidas.
+     *
+     * @param primeiraData Primeira data usada para descobrir o intervalo.
+     * @param segundaData Segunda data usada para descobrir o intervalo.
+     * @return Quantidade de dias que existe entre as duas datas recebidas
+     */
     @CrossOrigin
     @RequestMapping("diferencaData")
-    public long diaDaSemana(@RequestParam(value = "firstDate", defaultValue =
-            "não fornecida") String arg1,
-                            @RequestParam(value = "secondDate", defaultValue =
-                                    "não fornecida") String arg2) {
+    public long diaDaSemana(
+            @RequestParam(value = "firstDate")
+            @DateTimeFormat(pattern = "dd/MM/yyyy") Date primeiraData,
+            @RequestParam(value = "secondDate")
+            @DateTimeFormat(pattern = "dd/MM/yyyy") Date segundaData) {
 
-        Date primeiraData = dateFromString(arg1);
-        Date segundaData = dateFromString(arg2);
 
-        // Se segundaData não é fornecida, ou é inválida, use o dia corrente.
         if (primeiraData == null) {
             primeiraData = new Date();
         }
@@ -38,24 +43,5 @@ public class DiaDaSemanaController {
         }
 
         return DateUtils.obterDiferencaDatasDias(primeiraData, segundaData);
-    }
-
-    /**
-     * Recupera a instância de {@link Date} correspondente à sequência
-     * de caracteres.
-     *
-     * @param data Sequência de caracteres no formato dd/MM/yyyy.
-     * @return Instância de {@link Date} ou {@code null}, se a sequência
-     * não está no formato esperado (por exemplo, "01-01-2018")
-     */
-    private Date dateFromString(String data) {
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat(
-                    DateUtils.DEFAULT_DATE_FORMAT
-            );
-            return formatter.parse(data);
-        } catch (Exception exp) {
-            return null;
-        }
     }
 }
