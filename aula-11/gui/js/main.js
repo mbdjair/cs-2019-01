@@ -17,7 +17,7 @@ function atualizaDiaDaSemana() {
     let primeiraData = formataData(primeiraDataInput);
     let segundaDataInput = document.getElementById("segundaData").value;
     let segundaData = formataData(segundaDataInput);
-    xhttp.open("GET", obtemUrlRequest(primeiraData,segundaData), true);
+    xhttp.open("GET", obtemUrlRequest(primeiraData, segundaData), true);
     xhttp.send();
 }
 
@@ -29,9 +29,9 @@ function atualizaDiaDaSemana() {
  *  que fará parte da url
  * @return {string} url montada com as duas datas
  */
-function obtemUrlRequest(primeiraData, segundaData){
-    const encodePrimeiraData = encodeURIComponent(primeiraData)
-    const encodeSegundaData = encodeURIComponent(segundaData)
+function obtemUrlRequest(primeiraData, segundaData) {
+    const encodePrimeiraData = encodeURIComponent(primeiraData);
+    const encodeSegundaData = encodeURIComponent(segundaData);
     return `${PATH}firstDate=${encodePrimeiraData}&secondDate=${encodeSegundaData}`;
 }
 
@@ -44,35 +44,19 @@ function dataCorrente() {
 }
 
 /**
- * Garante que o dia ou o Mes estarão no formato correto
- * @param {number} n que é o numero que representa o dia ou mes
- * @return {string} dia ou mes formatado com duas casas decimais
- */
-function formataDiaOuMes(n) {
-    return ("00" + n).substr(-2, 2);
-}
-
-/**
- * Garante que ano estará no formato correto
- * @param {number} n que é o numero que representa o ano
- * @return {string} ano formatado com quatro casas decimais
- */
-function formataAno(n) {
-    return ("0000" + n).substr(-4, 4);
-}
-
-/**
  * Formata a entrada de yyyy-MM-dd para dd/MM/yyyy
  * 
  * @param {string} data no formato yyyy-MM-dd que será formatada
  * @return {string} data formata dd/MM/yyyy
  */
 function formataData(data) {
-    let [a, m, d] = data.split("-");
-
-    let dia = formataDiaOuMes(d);
-    let mes = formataDiaOuMes(m);
-    let ano = formataAno(a);
+    if (typeof data !== 'string'){
+        throw TypeError("Argumento inválido");
+    }
+    if( !/^\d{4}-\d{2}-\d{2}$/.test(data)){
+        throw Error("data no formato inválido");
+    }
+        let [a, m, d] = data.split("-");
 
     return `${d}/${m}/${a}`;
 }
