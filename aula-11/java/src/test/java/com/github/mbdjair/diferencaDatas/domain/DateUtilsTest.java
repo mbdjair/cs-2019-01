@@ -29,4 +29,14 @@ class DateUtilsTest {
         assertEquals(1L, diferenca);
     }
 
+    @Test
+    void obterIllegalArgmentException(){
+
+        assertThrows(
+                IllegalArgumentException.class
+                , () -> DateUtils.obterDiferencaDatasDias(null, null)
+        );
+    }
+
+
 }

@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Created by Alunoinf_2 on 09/07/2019.
@@ -19,13 +20,16 @@ class DiaDaSemanaControllerTest {
         final Date primeiraData = simpleDateFormat.parse("04/07/2019");
         final Date segundaData = simpleDateFormat.parse("05/07/2019");
         long diferenca = new DiaDaSemanaController().diaDaSemana(primeiraData, segundaData);
-        assertEquals(0L, diferenca);
+        assertEquals(1L, diferenca);
     }
 
     @Test
     void obterDiferencaDatasDiasSem() {
-        long diferenca = new DiaDaSemanaController().diaDaSemana(null, null);
-        assertEquals(0L, diferenca);
+        assertThrows(
+                IllegalArgumentException.class
+                , () -> new DiaDaSemanaController()
+                        .diaDaSemana(null, null)
+        );
     }
 
 }

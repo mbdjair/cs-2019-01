@@ -17,16 +17,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Classe que possui os métodos que serão executados ao se consumir a API
+ * Classe que possui métodos de manipulação de datas
  */
 @RestController
 public class DiaDaSemanaController {
     /**
-     * Recupera a quantidade de dias que existem entre as duas datas recebidas.
+     * Obtém valor em dias da diferença entre datas recebidas retornando
+     * , este é sempre positivo.
      *
-     * @param primeiraData Primeira data usada para descobrir o intervalo.
-     * @param segundaData Segunda data usada para descobrir o intervalo.
-     * @return Quantidade de dias que existe entre as duas datas recebidas
+     * @param primeiraData primeira data que participará da subtração.
+     * @param segundaData  segunda data que participará da subtração.
+     * @return retorna o número de dias entre as datas, sempre positivo
+     * @throws IllegalArgumentException se primeiraData ou segundaData
+     * forem nulas
      */
     @CrossOrigin
     @RequestMapping("diferencaData")
@@ -36,13 +39,11 @@ public class DiaDaSemanaController {
             @RequestParam(value = "secondDate")
             @DateTimeFormat(pattern = "dd/MM/yyyy") Date segundaData) {
 
-
-        if (primeiraData == null) {
-            primeiraData = new Date();
-        }
-
-        if (segundaData == null) {
-            segundaData = new Date();
+        if (primeiraData == null || segundaData == null) {
+            throw new IllegalArgumentException(
+                    "Tanto primeiraData quanto segundaData" +
+                            " devem ser diferente de nulo"
+            );
         }
 
         return DateUtils.obterDiferencaDatasDias(primeiraData, segundaData);

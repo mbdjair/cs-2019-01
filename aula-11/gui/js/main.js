@@ -40,7 +40,8 @@ function obtemUrlRequest(primeiraData, segundaData) {
  *
  */
 function dataCorrente() {
-    document.getElementById("data").valueAsDate = new Date();
+    document.getElementById("primeiraData").valueAsDate = new Date();
+    document.getElementById("segundaData").valueAsDate = new Date();
 }
 
 /**
